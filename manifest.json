@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "67 Domain Extension",
+  "version": "67",
+  "description": "What is this Diddy blud doing on his calculator is blud Einsten ?",
+  "icons": {
+    "128": "67.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["model-viewer.js", "content.js"], 
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["67.glb"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
