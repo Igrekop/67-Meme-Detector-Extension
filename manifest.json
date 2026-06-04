@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["model-viewer.js", "content.js"], 
+      "js": ["three.min.js", "GLTFLoader.js", "content.js"],
       "run_at": "document_end"
     }
   ],

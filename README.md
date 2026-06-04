@@ -6,36 +6,38 @@
 
 <br/>
 
-> [!WARNING]
-> **Work In Progress (Draft)**
-> This project is currently an early draft/prototype. Expect bugs and unfinished features! 
-
 ## 📖 Overview
 
-The **67 Meme Detector** is an experimental and chaotic Chrome/Chromium browser extension. It constantly scans the web pages you visit in real-time, looking for any mention of the legendary number **"67"** (including variants like "six sept", "6-7", "⁶⁷", etc.). 
+The **67 Meme Detector** is a chaotic Chrome/Chromium browser extension. It constantly scans the web pages you visit in real-time, looking for any mention of the legendary number **"67"** (including variants like "six sept", "6-7", "⁶⁷", etc.). 
 
-When the sacred number is detected, the extension triggers a **2-second completely unhinged psychedelic mode**, highlighting the number, shaking the screen, and flashing colors!
+When the sacred number is detected, the extension triggers a **2-second completely unhinged psychedelic mode** — the screen shakes violently, colors flash everywhere, the number gets highlighted, and **dozens of spinning 3D models rain across the screen** in pure chaos.
 
 <div align="center">
-  <img src="image.png" alt="67 Meme Detection in Action" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="image.png" alt="67 Meme Detection in Action" width="49%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
+  <img src="image copy.png" alt="67 Meme Detection with 3D Models" width="49%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 </div>
 
 ## ✨ Features
 
 - 🔍 **Real-Time Scanning:** Automatically detects "67" and its variations in any text node on the page as you browse.
-- 🎨 **Psychedelic Chaos Mode:** Triggers a hilarious 2-second screen shake and flashing rainbow background whenever a "67" is spotted.
+- 🎨 **Psychedelic Chaos Mode:** Triggers a 2-second screen shake and flashing rainbow background whenever a "67" is spotted.
+- 🧊 **3D Model Explosion:** Spawns **15-25 copies** of a spinning 3D model (`67.glb`) at random positions, random sizes, and random rotation axes using **Three.js** + WebGL.
 - 🖍️ **Text Highlighting:** Visually isolates the exact text that triggered the meme with a glowing red highlight.
 - 👀 **Dynamic Content Support:** Constantly watches the DOM to catch newly loaded content (infinite scroll friendly!).
 
-## 🚧 Known Issues
+## 🏗️ Technical Stack
 
-> [!NOTE]
-> **The Rotating 3D Model is broken!**
-> There is supposed to be a spinning 3D model (`67.glb`) that pops up during the chaos mode. However, it currently **does not work** because it requires a proper 3D rendering library setup/configuration. Honestly, I'm too lazy to fix it right now, so it is what it is! 🤷‍♂️
+| File | Role |
+|---|---|
+| `three.min.js` | Three.js r128 (UMD) — 3D rendering engine |
+| `GLTFLoader.js` | Loads `.glb` 3D model files |
+| `content.js` | Main script: detection, CSS animations, 3D scene |
+| `67.glb` | 3D model displayed during chaos mode |
+| `manifest.json` | Chrome Extension Manifest V3 config |
 
 ## ⚙️ Installation & Setup
 
-Since this is an unpacked, experimental extension, you'll need to install it manually in developer mode:
+Since this is an unpacked extension, you'll need to install it manually in developer mode:
 
 1. **Download/Clone the Repository:** 
    Clone this repo or download the ZIP and extract it to a folder on your computer.
